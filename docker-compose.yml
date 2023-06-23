@@ -1,0 +1,5 @@
+services:
+  bot:
+    build: ./
+    container_name: cerberus_bot
+    command: python3 cerberus.py
