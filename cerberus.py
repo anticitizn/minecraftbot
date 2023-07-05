@@ -28,9 +28,12 @@ async def on_message(message):
         await message.channel.send(f"**Players online:** {', '.join(query.players.names)}")
 
 async def get_mc_status():
+    try:
         status = server.status()
         print("{0} players online".format(status.players.online))
         await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="{0} players online".format(status.players.online)))
+    except Exception as e:
+        print("An error occurred: ", e)
 
 async def mc_status_loop():
     while True:
