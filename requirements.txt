@@ -1,0 +1,2 @@
+discord.py
+mcstatus @ git+https://github.com/py-mine/mcstatus@master

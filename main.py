@@ -13,7 +13,7 @@ server = JavaServer.lookup("kommunique.org")
 
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'Logged in as {client.user}')
     client.loop.create_task(mc_status_loop())
 
 @client.event
@@ -40,4 +40,8 @@ async def mc_status_loop():
         await get_mc_status()
         await asyncio.sleep(10)  # Wait for 10 seconds
 
-client.run('NjI0OTQ4ODAzOTI5Mzc0NzYw.G_0Hef.jqMVWlIpwYfVNo_ppsQdiv-L_h62dGQ7ls69T0')
+def get_token():
+    with open("token.txt", "r") as file:
+        return file.read().strip()
+
+client.run(get_token())

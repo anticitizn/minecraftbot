@@ -1,5 +1,5 @@
 services:
-  bot:
+  kommunique_bot:
     build: ./
-    container_name: cerberus_bot
-    command: python3 cerberus.py
+    container_name: kommunique_bot
+    command: python3 main.py
