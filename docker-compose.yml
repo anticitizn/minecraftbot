@@ -3,3 +3,4 @@ services:
     build: ./
     container_name: kommunique_bot
     command: python3 main.py
+    restart: unless-stopped
